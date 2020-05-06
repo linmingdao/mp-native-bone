@@ -1,0 +1,62 @@
+<view class="fix_top search_btn_area">
+  <input data-contentType="filterText" adjust-position="true" value="{{filterText}}" bindfocus="showSearcher" bindinput="bindUserInput" class="search_input" type="text" placeholder="输入团队名称进行搜索" placeholder-class="placeholder" />
+  <view wx:if="{{filterText !== ''}}" class="cancel_btn" bindtap="cancelSearch"></view>
+</view>
+<view wx:if="{{filterText === ''}}" class="tab_box" bindtap="switchTab">
+  <view data-name="join" class="{{visibleTab === 'join' ? 'check' : ''}}">加入的</view>
+  <view data-name="concern" class="{{visibleTab === 'concern' ? 'check' : ''}}">关注的</view>
+</view>
+<view wx:if="{{filterText !== ''}}" class="tab_box_detail">
+  <view bindtap="checkTeam" data-type="searchTeamList" data-index="{{index}}" wx:key="{{index}}" wx:for="{{searchTeamList}}" wx:for-item="item">
+    <checkbox class="rel_checkbox" checked="{{item.checked}}"></checkbox>
+    <view class="left">
+      <image src="{{item.team_logo}}"></image>
+    </view>
+    <view class="right">
+      <view>
+        <view class="name">{{item.name}}</view>
+        <view class="info">
+          <view>创建者: {{item.mid.name}}</view>
+          <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{filterText === '' && visibleTab === 'join'}}" class="tab_box_detail">
+  <view bindtap="checkTeam" data-type="join" data-index="{{index}}" wx:key="{{index}}" wx:for="{{join}}" wx:for-item="item">
+    <checkbox class="rel_checkbox" checked="{{item.checked}}"></checkbox>
+    <view class="left">
+      <image src="{{item.team_logo}}"></image>
+    </view>
+    <view class="right">
+      <view>
+        <view class="name">{{item.name}}</view>
+        <view class="info">
+          <view>创建者: {{item.mid.name}}</view>
+          <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{filterText === '' && visibleTab === 'concern'}}" class="tab_box_detail">
+  <view bindtap="checkTeam" data-type="concern" data-index="{{index}}" wx:key="{{index}}" wx:for="{{concern}}" wx:for-item="item">
+    <checkbox class="rel_checkbox" checked="{{item.checked}}"></checkbox>
+    <view class="left">
+      <image src="{{item.team_logo}}"></image>
+    </view>
+    <view class="right">
+      <view>
+        <view class="name">{{item.name}}</view>
+        <view class="info">
+          <view>创建者: {{item.mid.name}}</view>
+          <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="rel_bottom_btn bottom_btn_box button">
+  <button class="bottom_btn confirm_btn" bindtap="addRelation">添 加</button>
+</view>

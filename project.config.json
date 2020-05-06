@@ -1,0 +1,70 @@
+{
+    "description": "项目配置文件。",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "uglifyFileName": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.10.3",
+    "appid": "wx15db606c7d3f4f19",
+    "projectname": "mp-native-bone",
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "plugin": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "gamePlugin": {
+            "current": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "current": -1,
+            "list": [{
+                    "id": 2,
+                    "name": "林明道得测试团队_2",
+                    "pathName": "pages/login/login",
+                    "query": "scene=5ac69a00aecf428980614547dac4dfe9",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "林明道的测试团队_1",
+                    "pathName": "pages/login/login",
+                    "query": "scene=f082bf2fac5243e38b21f8563d18ce20",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "长按图片识别二维码_测试1团队",
+                    "pathName": "pages/login/login",
+                    "query": "scene=f082bf2fac5243e38b21f8563d18ce20",
+                    "scene": 1012
+                }
+            ]
+        }
+    }
+}

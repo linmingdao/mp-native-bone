@@ -1,0 +1,156 @@
+<!--资源详情页面-->
+<view class="container">
+    <view class="header">
+      <text>资源名称资源名称</text>
+      <swiper autoplay="{{true}}" interval="{{4000}}" circular="{{true}}" indicator-dots="{{indicatorDots}}" class="swiper_image">
+        <block wx:key="{{index}}" wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image mode="widthFix" src="{{item.photo}}" class="slide_image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="center_tab">
+      <view class="check">资源共享</view>
+      <view class="">评价</view>
+    </view>
+    <view  wx:if="{{fasle}}" class="resource_box"><!--资源信息列表-->
+      <view class="resource_list">
+        <view class="infoitem"><text>联系人：</text><input type="text" class="infoinput" value="润玉" disabled/></view>
+        <view class="infoitem"><text>联系方式：</text><input type="number" class="infoinput" value="185588885" disabled/></view>
+        <view class="infoitem"><text>有效期：</text><input type="date" class="infoinput" value="2015-10-01" disabled/></view>
+        <view class="infoitem"><text>价格：</text><input type="text" class="infoinput" value="2000元" disabled/></view>
+        <view class="infoitem"><text>地址：</text><textarea class="infotextarea" value="广东省广州市越秀区黄河大道138号广东省广州市越秀区黄河大道138号广东省广州市越秀区黄河大道138号" disabled="false" maxlength="80">       
+        </textarea> </view>
+      </view>
+      <view class="resource_introduction">
+        <text>简介：</text>
+        <textarea  disabled="false" maxlength="80">
+          我是简介
+          我是简介我是简介
+          我是简介我是简介我是简介
+          我是简介我是简介我是简介我是简介
+        </textarea>
+      </view>
+      <view class="resource_details">
+        <text>详情：</text>
+        <textarea  disabled="false" maxlength="80">
+          我是详情
+          我是详情我是详情
+          我是详情我是详情我是详情
+          我是详情我是详情我是详情我是详情
+        </textarea>
+      </view>
+    </view>
+    <view wx:if="{{true}}" class="evaluate_box"><!--评论列表-->
+      <view class="comment_list">
+        <view>
+          <view class="user_box"><!--用户信息-->
+            <view class="user_info"><!--头像、用户名、日期为一view-->
+              <view>
+                <image src='../../images/account_on.png' />
+              </view>
+              <view >
+                用户名
+                <text>2018.01.01</text>
+              </view>
+            </view>
+            <!--判断是否点赞，点赞文字图标变红redfont/否则为normalfont-->
+            <view class ="redfont">
+              <image class="liked"  src="../../images/liked.png"></image>
+              <text>(12345)</text>
+            </view>
+          </view>
+          <view class="comment_box"><!--用户评论信息-->
+            <view >
+              这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！这个不错！
+            </view>
+            <view><!--回复评论，设置循环，多条进行隐藏-->
+              <text class="uname" >番茄炒蛋</text>回复<text class="uname">用户名：</text>谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢
+            </view>
+            <view class="comment_hidden" hidden="{{xxx}}"><!--查案剩余评论-->
+              <text >查看剩余{{xxxx}}条评论</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class="user_box"><!--用户信息-->
+            <view class="user_info"><!--头像、用户名、日期为一view-->
+              <view>
+                <image src='../../images/account_on.png' />
+              </view>
+              <view >
+                用户名
+                <text>2018.01.01</text>
+              </view>
+            </view>
+            <!--判断是否点赞，点赞文字图标变红redfont/否则为normalfont-->
+            <view class ="normalfont">
+              <image class="liked"  src="../../images/like.png"></image>
+              <text>(12345)</text>
+            </view>
+          </view>
+          <view class="comment_box"><!--用户评论信息-->
+            <view >
+              这个不错！
+            </view>
+            <view><!--回复评论，设置循环，多条进行隐藏-->
+              <text class="uname" >番茄炒蛋</text>回复<text class="uname">用户名：</text>谢谢
+            </view>
+            <view class="comment_hidden" hidden="{{xxx}}"><!--查案剩余评论-->
+              <text >查看剩余{{xxxx}}条评论</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class="user_box"><!--用户信息-->
+            <view class="user_info"><!--头像、用户名、日期为一view-->
+              <view>
+                <image src='../../images/account_on.png' />
+              </view>
+              <view >
+                用户名
+                <text>2018.01.01</text>
+              </view>
+            </view>
+            <!--判断是否点赞，点赞文字图标变红redfont/否则为normalfont-->
+            <view class ="normalfont">
+              <image class="liked"  src="../../images/like.png"></image>
+              <text>(12345)</text>
+            </view>
+          </view>
+          <view class="comment_box"><!--用户评论信息-->
+            <view >
+              这个不错！
+            </view>
+            <view><!--回复评论，设置循环，多条进行隐藏-->
+              <text class="uname" >番茄炒蛋</text>回复<text class="uname">用户名</text>：谢谢
+            </view>
+            <view class="comment_hidden" hidden="{{xxx}}"><!--查案剩余评论-->
+              <text >查看剩余{{xxxx}}条评论</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom_box">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <input placeholder="我也说一句..." placeholder-class="placeholder" type="text"/>
+        </view>
+      </view>
+    </view>
+    <!--遮罩层-->
+    <view class="modal-mask"  wx:if="{{false}}">
+    </view>
+    <view class="modal-dialog" wx:if="{{fasle}}">
+      <view class="modal-textarea">
+        <textarea placeholder="发表你的评论..." placeholder-class="" auto-focus="true">
+        </textarea>
+      </view>
+      <view class="modal-footer">
+        <!--<image src="../../images/at.png"></image>-->
+        <button  class="btn-confirm">评  论</button>
+      </view>
+    </view>
+  </view>
+  

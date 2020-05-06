@@ -1,0 +1,21 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="container">
+  <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+    <mp-cells>
+      <mp-cell prop="name" title="姓名">
+        <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入姓名(必填)" />
+      </mp-cell>
+      <mp-cell prop="name" title="手机号">
+        <input bindinput="formInputChange" data-field="phone" class="weui-input" placeholder="请输入手机号(选填)" />
+      </mp-cell>
+      <mp-cell prop="remark" title="备注">
+        <input bindinput="formInputChange" data-field="remark" class="weui-input" placeholder="请输入备注信息(选填)" />
+      </mp-cell>
+    </mp-cells>
+  </mp-form>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="submitForm" loading="{{isPending}}" disabled="{{isPending}}">
+      申请加入
+    </button>
+  </view>
+</view>

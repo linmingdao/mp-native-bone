@@ -1,0 +1,12 @@
+<view class="container">
+  <progress percent="20" show-info color="pink" border-radius="5" />
+  <progress percent="40" show-info color="pink" border-radius="5" />
+  <progress percent="79" show-info color="pink" border-radius="5" />
+  <progress percent="50" show-info color="pink" border-radius="5" />
+  <progress percent="100" show-info color="pink" border-radius="5" />
+  <progress percent="36" show-info color="pink" border-radius="5" />
+  <progress percent="65" show-info color="pink" border-radius="5" />
+</view>
+<view class="bottom_fixed_btn bottom_btn_box button">
+  <button class="bottom_btn confirm_btn" bindtap="addRelation">发 布</button>
+</view>

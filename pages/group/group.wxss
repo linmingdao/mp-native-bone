@@ -1,0 +1,134 @@
+@import "/assets/css/page.wxss";
+@import "/assets/css/loading.wxss";
+@import "/assets/css/accordion.wxss";
+@import "/assets/css/sudoku.wxss";
+@import "/assets/css/icons.wxss";
+@import "/assets/css/tab.wxss";
+@import "./org.wxss";
+.fix_top {
+  width: 100%;
+}
+
+/* start 关系头部按钮组 */
+
+.group_entry {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 35rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e9e9e9;
+}
+
+.group_entry .entry {
+  position: relative;
+  width: 100rpx;
+  height: 170rpx;
+}
+
+.group_entry .entry .corner_mark {
+  position: absolute;
+  right: -25rpx;
+  top: 10rpx;
+  padding: 0 5rpx;
+  height: 32rpx;
+  background-color: #de1512;
+  color: #fff;
+  border-radius: 30rpx;
+  line-height: 32rpx;
+  font-size: 19rpx;
+  text-align: center;
+  min-width: 40rpx;
+}
+
+.group_entry .entry image {
+  width: 100rpx;
+  height: 100rpx;
+  object-fit: cover;
+}
+
+.group_entry .entry view {
+  font-size: 25rpx;
+  text-align: center;
+}
+
+/* start 关系头部按钮组 */
+
+.tab {
+  height: 100rpx;
+}
+
+.container {
+  padding: 0 35rpx;
+  margin-top: 290rpx;
+  background-color: #fff;
+}
+
+/* start 栏目编辑按钮 */
+
+.column_bottom_operator_box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btn {
+  display: inline-block;
+  height: 60rpx;
+  width: 60rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 10rpx;
+}
+
+/* end 栏目编辑按钮 */
+
+/* start 悬浮按钮 */
+
+.suspend_btn {
+  display: inline-block;
+  opacity: 0.7;
+  width: 74rpx;
+  height: 74rpx;
+  z-index: 100;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: fixed;
+  right: 1rpx;
+  top: 45%;
+  border-radius: 50%;
+  background-color: #de1512;
+  background-size: 75%;
+}
+
+.suspend_hover_btn {
+  opacity: 1;
+}
+
+/* end 悬浮按钮 */
+
+.accordion_item .title .susp-operator {
+  display: flex;
+  position: absolute;
+  right: 16rpx;
+  top: 0;
+  height: 90rpx;
+}
+
+.accordion_item .title .susp-operator .susp-btn {
+  display: inline-block;
+  width: 70rpx;
+  height: 90rpx;
+  background-size: 45rpx 45rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.accordion_item .title .susp-operator .susp-btn.edit {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADSElEQVRYR+2XXYhVVRTH/2vfgSGxhiAIESKE6BOCgkgJVMLASBC6F2fIl6AHn85Z586z5IAEA3fOWefMh6+9aGooIX1QJBp90YeR9jUlJggqhhGhaM7MPkv2cO5wZ7zn3nM/opfO49lrr/9vrb332nsR/uOPVuoz8ysAHirCZYw5EIbhb0Vs82yWATDzCQCbOnB4UkQ2t7Nn5jUicrmZ3RIAM88CeDgzOtnOKYCbIvJiKzvP854wxrwBYBuAMRHZs9J+EcD3/QoRHc4GN4tIEYCWjNVq9Ulr7UEieqTB8A6IRQBmdmSvAyiU0nbZYeanABzM9tIPAI5m/t3UZRB9BwiC4BlVfQvAOgDfl0qlkYmJidmGIJdB9BWAmddnkT+gqqdUdSRJkrP1jDVAXBKRte5/3wA8z3vOGOPS7hx/NTAwMFKr1c7XxUdHRx+z1rp99jiA/SKys28AQRBsVNVDAO4noi+stS7yC83EVXVWVStJkvzYFwDP857PIr8PwKcLCwvDU1NTl3IiP2uMqYRheLo+3tMSBEHwgltzVb2XiE6USqXhWq32R4747wAqIvJd4ynqGoCZtwJwab8bwMfz8/PD09PTf+aIXyCiShRFXzctRJ3WgWq1+lKapk58FYAPBwcHd4yPj/+dI34xi/zL3FLcCQAzb8+O2iCA9+bm5oZnZmau54hfSdO0nCTJZy0vo6IAvu+/TEQu8hKAY0NDQzvGxsb+yRG/SkTlKIo+aVU5C+8Bz/OeNsZ8mzk7mokvNBMnor+ste6oHW9XtgsDBEGwS1X3qerxOI63ANCcyK9lkX+UJ+6ufWvta5OTk+cKA/i+v4+IdgF4U0RezRG/AaAsIh+0EH8fgDtBi5dSYYAgCD5X1Q1EtDeKot1OYEV5vWWMKYdh+G6rtDc8ejoDYOZrAFYT0Yiqujv+WQDu8rkHgM0if6fdmncFwMyPAvg5z7mqluM4PtJO3I13BZBNrG+660R0Jk3TM8aY09bab5IkOVVEvFeABwHcJSK/FBVrZtd1BnoRbZz7P0DTDPwbz/Kc9XdNj2t+3LdTRPb30ph0sy3qXdfS87/X1qwbiF9FZKlZ6ak57VRdVX+K4/jtxnl3AHTqtFf724y9DD9XepJzAAAAAElFTkSuQmCC");
+}
+
+.accordion_item .title .susp-operator .susp-btn.delete {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA2ElEQVRYR+2XsQ3CMBBF/01DyQowAnRQwQbnAlpCC4X/BlBBByPACpRMY+SIoAgUpBA5IHEu3Pn+07Nk6wu+vKSc75wbhBC6KZlE5OK9PxYZDwBVDSmDn2eTzLPzTVVHAHYAzi1B9ACMSe4LgAzAIgKQ7KeEUNUTgAiwJJkZgBkwA2bADLw1oKobAJOGT/OW5LSYUespds6tQgizJgAisvbezz8CaBJcdbaWAQMwA2bADPyPgXslO7RZTERkGCvab1Sz0k8VK1onxd2XZl5jJXspp4lDK8ffAGVEITAGnQHrAAAAAElFTkSuQmCC");
+}

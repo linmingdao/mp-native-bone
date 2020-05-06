@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "团队二维码",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "sol-painter-share-sheet": "/components/sol/painter-share-sheet/index"
+    }
+}

@@ -1,0 +1,65 @@
+<view class="fix_top search_btn_area">
+  <input data-contentType="filterText" adjust-position="true" value="{{filterText}}" bindinput="bindUserInput" class="search_input" type="text" placeholder="输入团队名称进行搜索" placeholder-class="placeholder" />
+  <view wx:if="{{filterText !== ''}}" class="cancel_btn" bindtap="cancelSearch"></view>
+</view>
+<view class="container">
+  <!-- 团队 -->
+  <view wx:if="{{filterText === ''}}">
+    <!-- tab -->
+    <view class="tab trisect" bindtap="switchTab">
+      <view data-name="join" class="{{relVisibleTab === 'join' ? 'check' : ''}}">加入的</view>
+      <view data-name="concern" class="{{relVisibleTab === 'concern' ? 'check' : ''}}">关注的</view>
+    </view>
+    <!-- 加入的 -->
+    <view wx:if="{{relVisibleTab === 'join'}}" class="tab_box_detail">
+      <view bindtap="switchTeam" wx:key="{{index}}" data-tid="{{item._id}}" wx:for="{{join}}" wx:for-item="item">
+        <view class="left">
+          <image style="border-radius:10rpx;" src="{{item.team_logo}}"></image>
+        </view>
+        <view class="right">
+          <view>
+            <view class="name">{{item.name}}</view>
+            <view class="info">
+              <view>创建者：{{item.name}}</view>
+              <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 关注的 -->
+    <view wx:if="{{relVisibleTab === 'concern'}}" class="tab_box_detail">
+      <view bindtap="switchTeam" wx:key="{{index}}" data-tid="{{item._id}}" wx:for="{{concern}}" wx:for-item="item">
+        <view class="left">
+          <image style="border-radius:10rpx;" src="{{item.team_logo}}"></image>
+        </view>
+        <view class="right">
+          <view>
+            <view class="name">{{item.name}}</view>
+            <view class="info">
+              <view>创建者：{{item.name}}</view>
+              <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 搜索结果 -->
+  <view wx:if="{{filterText !== ''}}" class="tab_box_detail">
+    <view bindtap="switchTeam" wx:key="{{index}}" data-tid="{{item._id}}" wx:for="{{searchTeamList}}" wx:for-item="item">
+      <view class="left">
+        <image style="border-radius:10rpx;" src="{{item.team_logo}}"></image>
+      </view>
+      <view class="right">
+        <view>
+          <view class="name">{{item.name}}</view>
+          <view class="info">
+            <view>{{item.name}}</view>
+            <view>地址：{{item.province}}{{item.city}}{{item.area}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

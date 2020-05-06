@@ -1,0 +1,12 @@
+<view class="avatar-item" bind:tap="go2MemberInfo" wx:for="{{members}}" wx:for-index="index" wx:for-item="item" wx:key="item._id">
+  <view class="avatar {{index === 0 ? 'creator':''}}">
+    <image class="avatar-image" data-mid="{{item._id}}" src="{{item.avatar_url}}"></image>
+    <view class="delete" wx:if="{{isTeamOwner && index !== 0 && canDeleteMember}}" catchtap="deleteMember" data-index="{{index}}" data-mid="{{item._id}}"></view>
+    <text class="avatar-name">{{item.name || item.nickname}}</text>
+  </view>
+</view>
+<view class="avatar-item" wx:if="{{isTeamOwner}}">
+  <view class="avatar">
+    <view class="avatar-image delete-switch" bindtap="toggleCanDeleteMember"></view>
+  </view>
+</view>

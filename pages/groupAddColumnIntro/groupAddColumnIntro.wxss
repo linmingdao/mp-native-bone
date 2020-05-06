@@ -1,0 +1,19 @@
+@import "/assets/css/sudoku.wxss";
+@import "/assets/css/common.wxss";
+
+.container {
+  padding: 0 35rpx;
+}
+
+input {
+  padding: 10rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+textarea {
+  height: 400rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx;
+  overflow: hidden;
+}

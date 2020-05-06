@@ -1,0 +1,21 @@
+@import "/components/weui/weui-wxss/weui.wxss";
+@import "/assets/css/common.wxss";
+
+.un-editable-input {
+  color: #696969;
+}
+
+.avatar-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar-box .avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}

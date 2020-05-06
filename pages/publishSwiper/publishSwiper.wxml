@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="sudoku">
+    <view class="sudoku_item rounded_rectangle vertical_spacing" wx:key="{{index}}" wx:for="{{swiperList}}" wx:for-item="item">
+      <view data-figure="{{item}}" data-figureindex="{{index}}" catchtap="deleteFigure" class="corner_delete_btn"></view>
+      <image src="{{item.path}}"></image>
+    </view>
+    <view wx:if="{{showAddPhotoBtn}}" class="sudoku_item rounded_rectangle vertical_spacing add_atlas" bindtap="chooseImage"></view>
+  </view>
+  <button class="weui-btn" type="primary" loading="{{isPending}}" disabled="{{isPending}}" bindtap="publishSwipers" style="margin: 20rpx 0;">
+    发 布
+  </button>
+</view>

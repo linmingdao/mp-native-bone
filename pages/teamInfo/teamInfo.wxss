@@ -1,0 +1,26 @@
+@import "/components/weui/weui-wxss/weui.wxss";
+@import "/assets/css/common.wxss";
+
+.team-logo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.team-logo-box .team-logo {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+}
+
+.team-logo-box .logo-label {
+  margin: 10rpx 0;
+  color: rgb(105, 105, 105);
+  font-size: 30rpx;
+}
+
+.un-editable-input {
+  color: #696969;
+}

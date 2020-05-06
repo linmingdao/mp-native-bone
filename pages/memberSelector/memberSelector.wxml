@@ -1,0 +1,10 @@
+<view class="member_list">
+  <view class="member_row" bindtap="checkTeam" data-type="members" data-index="{{index}}" wx:key="{{index}}" wx:for="{{members}}" wx:for-item="item">
+    <checkbox class="rel_checkbox" checked="{{!!item.isAdmin}}"></checkbox>
+    <image class="avatar" src="{{item.avatar_url}}"></image>
+    <view class="m_name">{{item.nickname}}</view>
+  </view>
+</view>
+<view class="rel_bottom_btn bottom_btn_box button">
+  <button class="bottom_btn confirm_btn" bindtap="commit">提交设置</button>
+</view>

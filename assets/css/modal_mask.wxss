@@ -1,0 +1,85 @@
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 9000;
+    color: #fff;
+}
+
+.modal-dialog {
+    position: fixed;
+    width: 650rpx;
+    height: 468rpx;
+    z-index: 9999;
+    background: #fff;
+    border-radius: 12rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-title {
+    padding-top: 66rpx;
+    font-size: 34rpx;
+    font-weight: Bold;
+    font-family: PingFang-SC-Bold;
+    color: #323232;
+    text-align: center;
+}
+
+.modal-content {
+    width: 85%;
+    padding-top: 80rpx;
+    margin: 0 auto;
+}
+
+.modal-input {
+    display: flex;
+    background: #fff;
+    border-bottom: 2rpx solid #EEEEEE;
+    font-size: 28rpx;
+}
+
+.input {
+    width: 100%;
+    height: 82rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    padding: 0 20rpx;
+    color: #333;
+    box-sizing: inherit;
+}
+
+input-holder {
+    color: #D4D4D4;
+    font-size: 28rpx;
+    font-weight: Medium;
+    font-family: PingFang-SC-Medium;
+}
+
+.modal-footer {
+    height: 86rpx;
+    font-size: 34rpx;
+    line-height: 86rpx;
+}
+
+.btn-cancel {
+    color: #666;
+    text-align: center;
+    border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+    width: 500rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #DE1512;
+    color: #fff;
+    border-radius: 30rpx;
+    margin: 60rpx auto;
+}

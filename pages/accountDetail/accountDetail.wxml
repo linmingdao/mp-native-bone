@@ -1,0 +1,60 @@
+<!-- 我的-资料编辑 -->
+<view class="container">
+  <view class="header">
+    <image src="../../images/account_on.png"></image>
+  </view>
+  <view class="list">
+    <view class="listitem">
+      <text>昵  称</text>
+      <input placeholder-class="placeholder" type="text" class="listinput" placeholder="请输入昵称" />
+    </view>
+    <view class="listitem">
+      <text>团队名称</text>
+      <input placeholder-class="placeholder" type="text" class="listinput" placeholder="请输入团队名称" />
+    </view>
+    <view class="listitem">
+      <text>地  址</text>
+      <input placeholder-class="placeholder" type="text" class="listinput" placeholder="选择地址" />
+    </view>
+    <view class="listitem">
+      <text>地        址</text>
+      <picker class="" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      </picker>
+    </view>
+    <view class="listitem">
+      <text>详细地址</text>
+      <input placeholder-class="placeholder" type="text" class="listinput" placeholder="请输入详细地址" />
+    </view>
+    <view class="listitem">
+      <text>姓  名</text>
+      <input placeholder-class="placeholder" type="text" class="listinput" placeholder="请输入姓名" />
+    </view>
+    <view class="listitem">
+      <text>身份证号</text>
+      <input placeholder-class="placeholder" type="id-card" class="listinput" placeholder="请输入身份证号" />
+    </view>
+    <view class="listitem">
+      <text>手 机 号</text>
+      <input placeholder-class="placeholder" type="number" class="listinput" placeholder="请输入手机号" />
+    </view>
+  </view>
+  <view class="info_pic">
+    <!-- 图片插入 -->
+    <view>
+      <image src="/assets/images/AddLogo.png"></image>
+      <text>身份证照片</text>
+    </view>
+    <view bindtap="chooseImage">
+      <image src="/assets/images/AddLogo.png"></image>
+      <text>团队logo</text>
+    </view>
+    <view bindtap="chooseImage">
+      <image src="/assets/images/AddLogo.png"></image>
+      <text>团队证明材料</text>
+    </view>
+  </view>
+  <view class="button_view">
+    <button>保存修改</button>
+  </view>
+</view>

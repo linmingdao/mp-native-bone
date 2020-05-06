@@ -1,0 +1,55 @@
+<view class="header">
+  <view class="account_bg"></view>
+  <view class="user_info_area">
+    <view class="avatar_box">
+      <image class="avatar" src="{{avatarUrl}}" bind:tap="go2MemberInfo" />
+    </view>
+    <view class="info_box">
+      <view class="user_name_txt">{{userName}}</view>
+    </view>
+    <view class="qr_code_box">
+      <view class="more_team" bind:tap="goTo" data-destination="moreTeam">
+        <view class="icon">
+          <image src='/assets/images/more_team.png' />
+        </view>
+        <view class="txt">更多团队</view>
+      </view>
+      <view class="team_qr" bind:tap="goTo" data-destination="teamQrCode">
+        <view class="icon">
+          <image src='/assets/images/2code.png' />
+        </view>
+        <view class="txt">团队二维码</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="admin-switch-wrapper" wx:if="{{hasModeSwitch}}">
+  <view class="admin-switch">
+    {{mode?'当前为管理员模式':'当前为普通成员模式'}}
+    <switch color="#DE1512" checked="{{mode}}" bindchange="switchMode" />
+  </view>
+</view> -->
+<view class='message_box'>
+  <view class='message_title'>
+    <text class='my_msg_txt'>我的消息</text>
+    <text class='all_msg_txt' bind:tap="goToAllMessageList">全部消息</text>
+  </view>
+  <view class="message_list">
+    <view bind:tap="gotoAudit" data-item="{{item}}" class="message_item" wx:key="{{index}}" wx:for-item="item" wx:for="{{messageList}}">
+      <view class="title-box">
+        <view class="title">{{item.title}}</view>
+        <view wx:if="{{item.type === 'team_join' && item.status === 0}}" class="status unaudited">
+          去审核
+        </view>
+        <view wx:if="{{item.type === 'team_join' && item.status === 1}}" class="status audited">
+          已审核
+        </view>
+        <view wx:if="{{item.type === 'team_join' && item.status === 2}}" class="status rejected">
+          已拒绝
+        </view>
+      </view>
+      <view class="content">{{item.notes}}</view>
+      <view class="date">{{item.date}}</view>
+    </view>
+  </view>
+</view>

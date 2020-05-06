@@ -1,0 +1,35 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="team-logo-box">
+  <image class="team-logo" data-field="team_logo" bindtap="chooseImage" src="{{team_logo.path || '/assets/images/AddLogo.png'}}"></image>
+  <text class="logo-label">团队logo</text>
+</view>
+<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+  <mp-cells>
+    <mp-cell prop="creator_name" title="姓名">
+      <input bindinput="formInputChange" data-field="creator_name" class="weui-input" placeholder="请输入创建人姓名(必填)" />
+    </mp-cell>
+    <mp-cell prop="name" title="团队名称">
+      <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入团队名称(必填)" />
+    </mp-cell>
+    <mp-cell prop="industry" title="行业分类">
+      <picker mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}},{{multiArray[1][multiIndex[1]]}}
+        </view>
+      </picker>
+    </mp-cell>
+    <mp-cell prop="remark" title="地址">
+      <picker class="" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      </picker>
+    </mp-cell>
+    <mp-cell prop="addr" title="详细地址">
+      <input bindinput="formInputChange" data-field="addr" class="weui-input" placeholder="请输入详细地址(必填)" />
+    </mp-cell>
+  </mp-cells>
+</mp-form>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="submitForm" loading="{{isPending}}" disabled="{{isPending}}">
+    提交审核
+  </button>
+</view>

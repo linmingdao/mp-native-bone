@@ -1,0 +1,11 @@
+
+.loading_box {
+    background-color: #fff;
+    height: 100rpx;
+    text-align: center;
+}
+
+.loading_box image {
+    height: 100rpx;
+    width: 100rpx;
+}

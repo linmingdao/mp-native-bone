@@ -1,0 +1,93 @@
+<view class="container">
+  <!-- 权限设置列表 -->
+  <view class="list">
+    <!-- 要事权限设置 -->
+    <view>
+      <view>要事</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="event" class="{{auths.event === 1?'selected':''}}">全公开</view>
+        <view data-auth="2" data-type="event" class="{{auths.event === 2?'selected':''}}">半公开</view>
+        <view data-auth="3" data-type="event" class="{{auths.event === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+    <!-- 动态权限设置 -->
+    <view>
+      <view>动态</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="dynamic" class="{{auths.dynamic === 1?'selected':''}}">
+          全公开
+        </view>
+        <view data-auth="2" data-type="dynamic" class="{{auths.dynamic === 2?'selected':''}}">
+          半公开
+        </view>
+        <view data-auth="3" data-type="dynamic" class="{{auths.dynamic === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+    <!-- 简介权限设置 -->
+    <view>
+      <view>简介</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="intro" class="{{auths.intro === 1?'selected':''}}">全公开</view>
+        <view data-auth="2" data-type="intro" class="{{auths.intro === 2?'selected':''}}">半公开</view>
+        <view data-auth="3" data-type="intro" class="{{auths.intro === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+    <!-- 组织权限设置 -->
+    <view>
+      <view>组织</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="structure" class="{{auths.structure === 1?'selected':''}}">
+          全公开
+        </view>
+        <view data-auth="2" data-type="structure" class="{{auths.structure === 2?'selected':''}}">
+          半公开
+        </view>
+        <view data-auth="3" data-type="structure" class="{{auths.structure === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+    <!-- 风采权限设置 -->
+    <view>
+      <view>风采</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="honor" class="{{auths.honor === 1?'selected':''}}">全公开</view>
+        <view data-auth="2" data-type="honor" class="{{auths.honor === 2?'selected':''}}">半公开</view>
+        <view data-auth="3" data-type="honor" class="{{auths.honor === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+    <!-- 关系权限设置 -->
+    <view>
+      <view>关系</view>
+      <view class="item" bindtap="setAuth">
+        <view data-auth="1" data-type="contact" class="{{auths.contact === 1?'selected':''}}">
+          全公开
+        </view>
+        <view data-auth="2" data-type="contact" class="{{auths.contact === 2?'selected':''}}">
+          半公开
+        </view>
+        <view data-auth="3" data-type="contact" class="{{auths.contact === 3?'selected':''}}">
+          内部公开
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 提示信息 -->
+  <view class="tips_txt">
+    <view>所有栏目默认全公开</view>
+    <view>半公开：只对纳入上行、平行、下行的团队公开</view>
+    <view>内部公开：只对团队内成员公开</view>
+  </view>
+  <!-- 更新设置按钮 -->
+  <button class="weui-btn" type="primary" bindtap="updateAuths" loading="{{isPending}}" disabled="{{isPending}}" style="margin-top: 60rpx;">
+    更新设置
+  </button>
+</view>

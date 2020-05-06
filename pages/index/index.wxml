@@ -1,0 +1,128 @@
+<view class="header {{role === 'visitor' ? 'no-pub-btn':''}}">
+  <!-- tab -->
+  <view class="tab" bindtap="switchTab">
+    <view data-name="hots" class="tab_item{{visibleTab === 'hots' ? ' check' : ''}}">
+      <image class="icon" src="/assets/images/hot.png" />
+      <view class="text">推 荐</view>
+    </view>
+    <view data-name="events" class="tab_item{{visibleTab === 'events' ? ' check' : ''}}">
+      <image class="icon" src="/assets/images/events.png" />
+      <view class="text">要 事</view>
+    </view>
+    <view data-name="dynamics" class="tab_item{{visibleTab === 'dynamics' ? ' check' : ''}}">
+      <image class="icon gray" src="/assets/images/dynamics.png" />
+      <view class="text">动 态</view>
+    </view>
+  </view>
+  <!-- 发布按钮 -->
+  <view class="pub_btn_box" wx:if="{{role !== 'visitor'}}">
+    <view class="pub_btn_inner_box">
+      <view class="pub_btn img-icon icon-add--white_plus" catchtap="go2Publish"></view>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view wx:if="{{true}}" class="loading_box">
+    <image src="/assets/images/loading.gif" />
+  </view>
+  <!-- 轮播图 -->
+  <view class="swiper_box" wx:if="{{visibleTab !== 'dynamics'}}">
+    <swiper autoplay="{{true}}" interval="{{4000}}" circular="{{true}}" indicator-active-color="#eb1a1a" indicator-color="#fff" indicator-dots="{{true}}">
+      <block wx:key="{{index}}" wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image mode="scaleToFill" src="{{item.path}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 热点 -->
+  <view class="events_box" wx:if="{{visibleTab === 'hots'}}">
+    <!-- start 文章列表 -->
+    <view class="article_list">
+      <view bindtap="go2Detail" data-index="{{index}}" data-type="recommend" data-id="{{item._id}}" class='article_box' wx:key="{{index}}" wx:for-item="item" wx:for="{{hots}}">
+        <image class="cover" src="{{item.photo}}"></image>
+        <view class="title_box">
+          <view class="title">{{item.title}}</view>
+          <view class="date">来自：{{item.source}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- end 文章列表 -->
+  </view>
+  <!-- 要事 -->
+  <view class="events_box" wx:if="{{visibleTab === 'events'}}">
+    <!-- start 轮播图 -->
+    <!-- <view class="swiper_box">
+      <swiper autoplay="{{true}}" interval="{{4000}}" circular="{{true}}" indicator-active-color="#eb1a1a" indicator-color="#fff" indicator-dots="{{true}}">
+        <block wx:key="{{index}}" wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image mode="scaleToFill" src="{{item.path}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+    <!-- end 轮播图 -->
+    <!-- start 文章列表 -->
+    <view class="article_list">
+      <view bindlongpress="reject" bindtouchend="touchend" bindtap="go2Detail" data-index="{{index}}" data-type="event" data-id="{{item._id}}" class='article_box' wx:key="{{index}}" wx:for-item="item" wx:for="{{events}}">
+        <image class="cover" src="{{item.photo}}"></image>
+        <view class="title_box">
+          <view class="title">{{item.title}}</view>
+          <view class="date">{{item.date}}</view>
+        </view>
+        <button wx:if="{{role === 'admin' && !!item.from_tid && item.status === 0}}" catchtap="receive" data-index="{{index}}" data-id="{{item._id}}" class="receive_btn">
+          接 收
+        </button>
+        <!-- <button wx:if="{{!item.from_tid || (!!item.from_tid && item.status === 1)}}" data-id="{{item._id}}" data-type="event" catchtap="forward" class="receive_btn">
+            @ 团队
+          </button> -->
+      </view>
+    </view>
+    <!-- end 文章列表 -->
+  </view>
+  <!-- 动态 -->
+  <view class="dynamic_box" wx:if="{{visibleTab === 'dynamics'}}">
+    <view class="wb_post" wx:for="{{dynamics}}" wx:key="index" wx:for-item="dynamic">
+      <!-- 微博标题 -->
+      <view class="avatar_box">
+        <image class="avatar" src="{{dynamic.mid.avatar_url}}" />
+        <view class="outline">
+          <view class="title_text">{{dynamic.mid.name || dynamic.mid.nickname}}</view>
+          <view class="outline_text">
+            {{dynamic.date}}
+            <label wx:if="{{false}}">{{dynamic.view}} 阅读</label>
+          </view>
+        </view>
+      </view>
+      <!-- 微博帖子主体 -->
+      <view class="main">
+        <view wx:if="{{dynamic.content}}">
+          <view class="text">
+            <label class="title">#{{dynamic.title}}#</label>
+            <text selectable="{{true}}">{{dynamic.content}}</text>
+          </view>
+          <view class="sudoku">
+            <view class="sudoku_item" wx:for="{{dynamic.photo}}" wx:for-index="pIdx" wx:for-item="pSrc" wx:key="pIdx">
+              <image bindtap="previewImage" data-src="{{pSrc}}" data-list="{{dynamic.photo}}" src="{{pSrc}}" />
+            </view>
+          </view>
+        </view>
+        <!-- 微博链接 -->
+        <view wx:if="{{!dynamic.content}}" bindtap="go2Detail" data-id="{{dynamic._id}}" data-type="dynamic" class="link">
+          <image class="surface" src="/assets/images/link.png" />
+          <view class="text">{{dynamic.title}}</view>
+        </view>
+      </view>
+      <view class="footer">
+        <!-- <view class="opt_item like"></view> -->
+        <view class="opt_item comment" bindtap="go2Detail" data-id="{{dynamic._id}}" data-type="dynamic"></view>
+        <!-- <view class="opt_item forward"></view> -->
+        <!-- <view class="opt_item share"></view> -->
+        <!-- <view wx:if="{{false}}" class="opt_item at"></view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{canDrag}}" class="loading_box">
+  <image src="/assets/images/loading.gif" />
+</view>

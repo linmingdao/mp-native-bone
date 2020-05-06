@@ -1,0 +1,7 @@
+.weui-btn {
+    background-color: #df0a0a !important;
+}
+
+.weui-toptips_error {
+    background-color: #f7d200 !important;
+}

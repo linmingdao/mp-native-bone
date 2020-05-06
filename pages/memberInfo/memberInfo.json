@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "成员信息",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "mp-toptips": "/components/weui/toptips/toptips",
+        "mp-cells": "/components/weui/cells/cells",
+        "mp-cell": "/components/weui/cell/cell",
+        "mp-form": "/components/weui/form/form"
+    }
+}

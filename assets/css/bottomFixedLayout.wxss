@@ -1,0 +1,12 @@
+@import "./tbutton.wxss";
+
+page {
+  padding-bottom: 170rpx;
+}
+
+.bottom_fixed_btn {
+  z-index:200;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,16 @@
+<view class="container">
+  <input class="title" bindinput="bindUserInput" data-contentType="title" adjust-position="true" type="text" placeholder="报名标题" />
+  <textarea class="content" bindinput="bindUserInput" data-contentType="content" adjust-position="true" placeholder="补充说明(选填)"></textarea>
+  <view class="vote_setting date">
+    <view class="vote_setting_desc">截止日期</view>
+    <picker class="time_picker" mode="time" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+      {{time}}
+    </picker>
+    <picker class="date_picker" mode="date" value="{{date}}" start="2015-09-01" end="2119-01-01" bindchange="bindDateChange">
+      {{date}}
+    </picker>
+  </view>
+</view>
+<view class="bottom_fixed_btn bottom_btn_box button">
+  <button class="bottom_btn confirm_btn" bindtap="addRelation">发 布</button>
+</view>

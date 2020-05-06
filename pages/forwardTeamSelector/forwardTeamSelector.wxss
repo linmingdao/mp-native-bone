@@ -1,0 +1,105 @@
+@import "/assets/css/tbutton.wxss";
+
+page {
+  padding-bottom: 170rpx;
+}
+
+.tab_box_detail {
+  padding: 0 35rpx;
+}
+
+.tab_box_detail > view {
+  width: 100%;
+  margin-top: 34rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rel_checkbox {
+  margin-top: 50rpx;
+}
+
+.left {
+  width: 200rpx;
+}
+
+.left > image {
+  width: 158rpx;
+  height: 158rpx;
+  margin: 0 auto;
+  border: 1rpx solid #eeeeee;
+  border-radius: 10rpx;
+}
+
+.right {
+  width: 73%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 30rpx;
+  color: #323232;
+  font-weight: Bold;
+  font-family: PingFang-SC-Bold;
+  margin-top: 20rpx;
+}
+
+.info {
+  font-size: 28rpx;
+  color: #7a7a7a;
+  font-weight: Medium;
+  font-family: PingFang-SC-Medium;
+  margin-top: 10rpx;
+}
+
+.right image {
+  width: 66rpx;
+  height: 66rpx;
+  margin-top: 50rpx;
+}
+
+/*  start 重写checkbox样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 46rpx;
+  /* 背景的宽 */
+  height: 46rpx;
+  /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  /* border: none; */
+  border-color: #fff;
+  background: #de1512;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 46rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 46rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 35rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/*  end 重写checkbox样式  */
+
+.rel_bottom_btn {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+}

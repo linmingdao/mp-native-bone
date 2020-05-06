@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "s-popup": "/components/sol/wux/popup/index",
+        "sol-image-btn": "/components/sol/image-btn/index",
+        "painter": "/components/sol/painter/painter"
+    }
+}
