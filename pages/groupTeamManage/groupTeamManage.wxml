@@ -1,8 +1,0 @@
-<mp-cells>
-  <mp-cell link hover url="../groupColumnDetail/groupColumnDetail" value="栏目公开设置">
-    <image slot="icon" src="/assets/images/colunm-setting.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-  </mp-cell>
-  <mp-cell link hover url="../memberSelector/memberSelector" value="团队管理员授权" wx:if="{{isTeamOwner}}">
-    <image slot="icon" src="/assets/images/admin-setting.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
-  </mp-cell>
-</mp-cells>

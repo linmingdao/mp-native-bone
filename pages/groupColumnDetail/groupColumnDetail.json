@@ -1,9 +1,0 @@
-{
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "栏目设置",
-    "enablePullDownRefresh": true,
-    "usingComponents": {
-        "mp-cell": "/components/weui/cell/cell",
-        "mp-cells": "/components/weui/cells/cells"
-    }
-}

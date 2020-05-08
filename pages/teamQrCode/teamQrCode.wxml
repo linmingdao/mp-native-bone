@@ -1,9 +1,0 @@
-<view class="qr_code_box">
-  <view class="qr_code_img">
-    <image mode="aspectFit" src="{{shareImgPath}}"></image>
-  </view>
-</view>
-<view class="bottom_btn_box button save_btn">
-  <button class="bottom_btn confirm_btn" bindtap="doShare">点我分享</button>
-</view>
-<sol-painter-share-sheet id="shareSheet" mode="{{shareMode}}" visible="{{showShare}}" share-data="{{shareData}}" bind:path="ImgPath" />

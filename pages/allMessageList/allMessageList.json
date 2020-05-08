@@ -1,7 +1,0 @@
-{
-    "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "#DE1512",
-    "navigationBarTitleText": "全部消息",
-    "navigationBarTextStyle": "white",
-    "onReachBottomDistance": 200
-}

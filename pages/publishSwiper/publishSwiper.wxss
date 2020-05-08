@@ -1,6 +1,0 @@
-@import "/assets/css/sudoku.wxss";
-@import "/assets/css/common.wxss";
-
-.container {
-  padding: 0 35rpx;
-}
