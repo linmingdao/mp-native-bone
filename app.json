@@ -1,50 +1,13 @@
 {
     "pages": [
-        "pages/login/login",
-        "pages/index/index",
-        "pages/relation/relation",
-        "pages/group/group",
-        "pages/publish/publish",
-        "pages/products/products",
+        "pages/home/home",
         "pages/account/account",
-        "pages/allMessageList/allMessageList",
-        "pages/moreTeam/moreTeam",
-        "pages/details/details",
-        "pages/accountDetail/accountDetail",
-        "pages/productsDetail/productsDetail",
-        "pages/myPublish/myPublish",
-        "pages/publishSwiper/publishSwiper",
-        "pages/publishAffairs/publishAffairs",
-        "pages/publishVote/publishVote",
-        "pages/publishActivity/publishActivity",
-        "pages/publishRegist/publishRegist",
-        "pages/voteDetails/voteDetails",
-        "pages/activityDetails/activityDetails",
-        "pages/groupDetailOrg/groupDetailOrg",
-        "pages/groupDetailHonor/groupDetailHonor",
-        "pages/groupAddColumnIntro/groupAddColumnIntro",
-        "pages/groupAddColumOrgHonor/groupAddColumOrgHonor",
-        "pages/groupAddItemOrg/groupAddItemOrg",
-        "pages/groupAddItemHonor/groupAddItemHonor",
-        "pages/groupTeamCreate/groupTeamCreate",
-        "pages/groupTeamMember/groupTeamMember",
-        "pages/groupMemberJoin/groupMemberJoin",
-        "pages/groupTeamManage/groupTeamManage",
-        "pages/groupColumnDetail/groupColumnDetail",
-        "pages/search/search",
-        "pages/teamSelector/teamSelector",
-        "pages/memberSelector/memberSelector",
-        "pages/forwardTeamSelector/forwardTeamSelector",
-        "pages/teamQrCode/teamQrCode",
-        "pages/updateArticle/updateArticle",
-        "pages/teamInfo/teamInfo",
-        "pages/memberInfo/memberInfo",
-        "pages/memberList/memberList"
+        "pages/welcome/welcome"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#ffffff",
-        "navigationBarTitleText": "社团",
+        "navigationBarTitleText": "demo",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
@@ -57,18 +20,6 @@
                 "iconPath": "/assets/images/tabbar/index_off.png",
                 "selectedIconPath": "/assets/images/tabbar/index_on.png",
                 "text": "首页"
-            },
-            {
-                "pagePath": "pages/group/group",
-                "iconPath": "/assets/images/tabbar/group_off.png",
-                "selectedIconPath": "/assets/images/tabbar/group_on.png",
-                "text": "团队"
-            },
-            {
-                "pagePath": "pages/relation/relation",
-                "iconPath": "/assets/images/tabbar/relation_off.png",
-                "selectedIconPath": "/assets/images/tabbar/relation_on.png",
-                "text": "关系"
             },
             {
                 "pagePath": "pages/account/account",

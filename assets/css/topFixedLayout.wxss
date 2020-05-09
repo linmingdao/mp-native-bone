@@ -1,5 +1,0 @@
-@import "./tbutton.wxss";
-
-page {
-  padding-top: 90rpx;
-}

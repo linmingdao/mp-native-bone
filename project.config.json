@@ -43,28 +43,7 @@
         },
         "miniprogram": {
             "current": -1,
-            "list": [{
-                    "id": 2,
-                    "name": "林明道得测试团队_2",
-                    "pathName": "pages/login/login",
-                    "query": "scene=5ac69a00aecf428980614547dac4dfe9",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "林明道的测试团队_1",
-                    "pathName": "pages/login/login",
-                    "query": "scene=f082bf2fac5243e38b21f8563d18ce20",
-                    "scene": null
-                },
-                {
-                    "id": -1,
-                    "name": "长按图片识别二维码_测试1团队",
-                    "pathName": "pages/login/login",
-                    "query": "scene=f082bf2fac5243e38b21f8563d18ce20",
-                    "scene": 1012
-                }
-            ]
+            "list": []
         }
     }
 }
