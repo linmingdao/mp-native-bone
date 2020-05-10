@@ -1,0 +1,5 @@
+<view>
+  首页
+  <!-- 使用字体图标 -->
+  <text class="iconfont icon-setting" style="color: red;"></text>
+</view>

@@ -17,15 +17,15 @@
         "borderStyle": "black",
         "list": [
             {
-                "pagePath": "pages/index/index",
-                "iconPath": "/assets/images/tabbar/index_off.png",
-                "selectedIconPath": "/assets/images/tabbar/index_on.png",
+                "pagePath": "pages/home/home",
+                "iconPath": "/assets/images/tabbar/home_off.png",
+                "selectedIconPath": "/assets/images/tabbar/home_on.png",
                 "text": "首页"
             },
             {
                 "pagePath": "pages/account/account",
-                "iconPath": "/assets/images/tabbar/mine_off.png",
-                "selectedIconPath": "/assets/images/tabbar/mine_on.png",
+                "iconPath": "/assets/images/tabbar/account_off.png",
+                "selectedIconPath": "/assets/images/tabbar/account_on.png",
                 "text": "我的"
             }
         ]
