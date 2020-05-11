@@ -5,28 +5,7 @@ import * as notice from "../../supports/notice.js";
 
 Page({
   data: {
-    cateItems: [
-      {
-        cate_id: 1,
-        cate_name: "洗护",
-        children: [
-          {
-            child_id: 1,
-            name: "洁面皂uu",
-            image: "../../assets/images/home/1.jpg",
-          },
-          {
-            child_id: 2,
-            name: "卸妆",
-            image: "../../assets/images/home/2.jpg",
-          },
-        ],
-      },
-      {
-        cate_id: 2,
-        cate_name: "生鲜",
-      },
-    ],
+    cateItems: [],
     curNav: 1,
     curIndex: 0,
   },
@@ -43,7 +22,6 @@ Page({
     notice.showLoading();
     const cateItems = await homeService.getCategoryData();
     this.setData({ cateItems });
-    console.log(cateItems);
     notice.hideLoading();
   },
   // getCategoryData() {
