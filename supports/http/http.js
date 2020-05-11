@@ -5,7 +5,7 @@ export default class Http extends RESTfulClient {
   constructor() {
     super();
     // 是否显示导航栏loading的标志位
-    this.isShowNavigationBarLoading = true;
+    this.isShowNavBarLoading = true;
     // 是否显示loading的标志位
     this.isShowLoading = false;
     // loading的文本提示信息
@@ -106,7 +106,7 @@ export default class Http extends RESTfulClient {
    * 启用请求开始前的导航栏loading
    */
   showNavigationBarLoading() {
-    this.isShowNavigationBarLoading = true;
+    this.isShowNavBarLoading = true;
     return this;
   }
 
@@ -114,7 +114,7 @@ export default class Http extends RESTfulClient {
    * 禁用请求开始的导航栏loading
    */
   hideNavigationBarLoading() {
-    this.isShowNavigationBarLoading = false;
+    this.isShowNavBarLoading = false;
     return this;
   }
 }

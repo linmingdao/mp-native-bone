@@ -1,12 +1,12 @@
+import { wxRequest } from "../wxp.js";
 import { Promise } from "../promise.js";
 import { mergeUrl, isFunction } from "../../utils/common.js";
 import {
-  wxRequest,
-  wxShowLoading,
-  wxHideLoading,
-  wxShowNavigationBarLoading,
-  wxHideNavigationBarLoading,
-} from "../wxp.js";
+  showLoading,
+  hideLoading,
+  showNavBarLoading,
+  hideNavBarLoading,
+} from "../notice.js";
 
 /**
  * 判断是否是有效的HTTP事件
@@ -59,9 +59,8 @@ export default class RequestProxy {
       // 执行请求开始的钩子函数
       isFunction(this.onbefore) && this.onbefore(this);
       // 是否显示请求前的loading动画
-      this.isShowLoading &&
-        wxShowLoading({ title: this.loadingTxt, mask: false });
-      this.isShowNavigationBarLoading && wxShowNavigationBarLoading();
+      this.isShowLoading && showLoading(this.loadingTxt);
+      this.isShowNavBarLoading && showNavBarLoading();
       // 执行请求
       this.prepareRequest({ method, url, data })
         .then((response) => {
@@ -83,8 +82,8 @@ export default class RequestProxy {
         })
         .finally(() => {
           // 是否隐藏请求结束的loading动画
-          this.isShowLoading && wxHideLoading();
-          this.isShowNavigationBarLoading && wxHideNavigationBarLoading();
+          this.isShowLoading && hideLoading();
+          this.isShowNavBarLoading && hideNavBarLoading();
           // 执行请求结束的钩子函数
           isFunction(this.oncomplete) && this.oncomplete(this);
         });
