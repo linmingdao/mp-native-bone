@@ -1,12 +1,7 @@
 import { wxRequest } from "../wxp.js";
+import * as notice from "../notice.js";
 import { Promise } from "../promise.js";
 import { mergeUrl, isFunction } from "../../utils/common.js";
-import {
-  showLoading,
-  hideLoading,
-  showNavBarLoading,
-  hideNavBarLoading,
-} from "../notice.js";
 
 /**
  * 判断是否是有效的HTTP事件
@@ -59,19 +54,20 @@ export default class RequestProxy {
       // 执行请求开始的钩子函数
       isFunction(this.onbefore) && this.onbefore(this);
       // 是否显示请求前的loading动画
-      this.isShowLoading && showLoading(this.loadingTxt);
-      this.isShowNavBarLoading && showNavBarLoading();
+      this.isShowLoading && notice.showLoading(this.loadingTxt);
+      this.isShowNavBarLoading && notice.showNavBarLoading();
       // 执行请求
       this.prepareRequest({ method, url, data })
         .then((response) => {
           // 执行拦截器
           const { interceptFn } = this;
           let result = false;
-          isFunction(interceptFn) && (result = interceptFn(response, this));
+          isFunction(interceptFn) &&
+            (result = interceptFn(response.data, response, this));
           // 拦截器拦截成功，则不会将结果上报到应用层
           if (result) return;
           // 拦截器拦截失败，则将结果上报到应用层
-          resolve(response);
+          resolve(response.data);
           // 执行请求成功的钩子函数
           isFunction(this.onsuccess) && this.onsuccess(response, this);
         })
@@ -82,8 +78,8 @@ export default class RequestProxy {
         })
         .finally(() => {
           // 是否隐藏请求结束的loading动画
-          this.isShowLoading && hideLoading();
-          this.isShowNavBarLoading && hideNavBarLoading();
+          this.isShowLoading && notice.hideLoading();
+          this.isShowNavBarLoading && notice.hideNavBarLoading();
           // 执行请求结束的钩子函数
           isFunction(this.oncomplete) && this.oncomplete(this);
         });

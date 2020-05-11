@@ -1,2 +1,92 @@
-/* 在app.wxss全局引入字体图标样式了，就不用每个页面都引 */
-/* @import "/assets/iconfont/iconfont.wxss"; */
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.nav_left {
+  width: 25%;
+  height: 100%;
+  background: #f2f2f2;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav_left .nav_left_items {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+
+.nav_left .nav_left_items.active {
+  position: relative;
+  background: #fff;
+  color: #ff5000;
+}
+
+.nav_left .nav_left_items.active::before {
+  display: inline-block;
+  width: 6rpx;
+  height: 60rpx;
+  background: #fe5723;
+  content: "";
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+}
+
+.nav_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+}
+
+.nav_right .nav_right_items {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.nav_right .nav_right_items image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.nav_right .nav_right_items text {
+  display: block;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nocate {
+  padding: 100rpx;
+  text-align: center;
+}
+
+.nocate image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.nocate text {
+  font-size: 28rpx;
+  display: block;
+  color: #bbb;
+}
+
+/*隐藏滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

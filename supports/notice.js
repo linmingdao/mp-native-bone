@@ -4,7 +4,7 @@ import {
   wxHideLoading,
   wxShowNavigationBarLoading,
   wxHideNavigationBarLoading,
-} from "../wxp.js";
+} from "../supports/wxp.js";
 
 // alert弹窗
 

@@ -1,0 +1,2 @@
+/* 在app.wxss全局引入字体图标样式了，就不用每个页面都引 */
+/* @import "/assets/iconfont/iconfont.wxss"; */

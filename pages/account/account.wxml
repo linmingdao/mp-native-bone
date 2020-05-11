@@ -1,1 +1,5 @@
-<view>我的</view>
+<view>
+  我的
+  <!-- 使用字体图标 -->
+  <text class="iconfont icon-setting" style="color: red;"></text>
+</view>
