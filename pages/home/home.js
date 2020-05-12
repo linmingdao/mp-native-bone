@@ -9,7 +9,7 @@ Page({
     curNav: 1,
     curIndex: 0,
   },
-  switchRightTab: function (e) {
+  switchRightTab(e) {
     let id = e.target.dataset.id;
     let index = e.target.dataset.index;
     this.setData({

@@ -36,5 +36,5 @@ export default new Http()
   // 配置请求结束之后的回调函数
   .on("complete", (client) => {
     client.hideLoading();
-    client.showNavigationBarLoading();
+    client.showNavBarLoading();
   });

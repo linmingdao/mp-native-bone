@@ -105,7 +105,7 @@ export default class Http extends RESTfulClient {
   /**
    * 启用请求开始前的导航栏loading
    */
-  showNavigationBarLoading() {
+  showNavBarLoading() {
     this.isShowNavBarLoading = true;
     return this;
   }
@@ -113,7 +113,7 @@ export default class Http extends RESTfulClient {
   /**
    * 禁用请求开始的导航栏loading
    */
-  hideNavigationBarLoading() {
+  hideNavBarLoading() {
     this.isShowNavBarLoading = false;
     return this;
   }
